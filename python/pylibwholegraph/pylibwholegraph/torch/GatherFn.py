@@ -1,7 +1,7 @@
 import torch
 from .embedding import WholeMemoryEmbedding, WholeMemoryEmbeddingModule
 
-class GatherFn(nn.Module):
+class GatherFn(torch.nn.Module):
     def __init__(
             self, 
             node_embedding: WholeMemoryEmbedding
