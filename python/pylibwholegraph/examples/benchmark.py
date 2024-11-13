@@ -92,7 +92,7 @@ def measure_time(module: nn.Module, input: torch.Tensor, epochs: int = 100) -> T
 
     return forward_time, backward_time
 
-def main(argv):
+def main():
     print(f"Rank={wgth.get_rank()}, local_rank={wgth.get_local_rank()}")
     global_comm, local_comm = wgth.init_torch_env_and_create_wm_comm(
         wgth.get_rank(),
