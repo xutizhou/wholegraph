@@ -142,7 +142,7 @@ def main():
         "distributed",
         "cuda",
         torch.float16,
-        [args.node_num, args.feat_dim],
+        [100, args.feat_dim],
         cache_policy=cache_policy,
         random_init=True,
         round_robin_size=args.round_robin_size,
