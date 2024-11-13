@@ -1,15 +1,10 @@
-import torch
-from .embedding import WholeMemoryEmbedding, WholeMemoryEmbeddingModule
+import torch.nn as nn
 
-class GatherFn(torch.nn.Module):
-    def __init__(
-            self, 
-            node_embedding: WholeMemoryEmbedding
-    ):
+class GatherFn(nn.Module):
+    def __init__(self, node_feat_wm_embedding):
         super(GatherFn, self).__init__()
-        self.node_embedding = node_embedding
-        self.gather_fn = WholeMemoryEmbeddingModule(self.node_embedding)
+        self.node_feat_wm_embedding = node_feat_wm_embedding
 
-    def forward(self, ids):
-        x_feat = self.gather_fn(ids, force_dtype=torch.float32)
-        return x_feat
+    def forward(self, x):
+        # 定义前向传播逻辑
+        pass
