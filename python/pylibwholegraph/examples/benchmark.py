@@ -9,6 +9,7 @@ import apex
 import torch
 from apex.parallel import DistributedDataParallel as DDP
 import pylibwholegraph.torch as wgth
+from ..pylibwholegraph.torch.embedding import WholeMemoryEmbedding
 
 argparser = argparse.ArgumentParser()
 wgth.add_distributed_launch_options(argparser)
