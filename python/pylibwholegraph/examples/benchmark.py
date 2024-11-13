@@ -9,7 +9,6 @@ import apex
 import torch
 from apex.parallel import DistributedDataParallel as DDP
 import pylibwholegraph.torch as wgth
-from pylibwholegraph.torch.gather_fn import GatherFn
 
 
 argparser = argparse.ArgumentParser()
@@ -152,7 +151,7 @@ def main():
     wm_optimizer = wgth.create_wholememory_optimizer(node_feat_wm_embedding, "adam", {})
     wgth.set_framework(args.framework)
     # Create GatherFn module
-    model = GatherFn(node_feat_wm_embedding).cuda()
+    model = wgth.GatherFn(node_feat_wm_embedding).cuda()
     model = DDP(model, delay_allreduce=True)
     # Generate random input data
     input_data = torch.randn(args.node_num).cuda()
