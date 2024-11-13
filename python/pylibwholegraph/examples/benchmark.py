@@ -151,6 +151,7 @@ def main():
     wm_optimizer = wgth.create_wholememory_optimizer(node_feat_wm_embedding, "adam", {})
     wgth.set_framework(args.framework)
     # Create GatherFn module
+    import pdb; pdb.set_trace()
     model = wgth.GatherFn(node_feat_wm_embedding).cuda()
     model = DDP(model, delay_allreduce=True)
     # Generate random input data
