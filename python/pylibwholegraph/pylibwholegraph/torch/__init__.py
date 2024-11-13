@@ -76,4 +76,4 @@ from .data_loader import (
     get_valid_test_dataloader,
 )
 from .wholegraph_env import compile_cpp_extension
-from.GatherFn import GatherFn
+from .GatherFn import GatherFn
