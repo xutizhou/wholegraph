@@ -69,11 +69,10 @@ from .common_options import (
     add_node_classfication_options,
 )
 
-from .gnn_model import set_framework, create_gnn_layers, create_sub_graph, HomoGNNModel
+from .gnn_model import set_framework, create_gnn_layers, create_sub_graph, HomoGNNModel, GatherFn
 from .data_loader import (
     create_node_claffication_datasets,
     get_train_dataloader,
     get_valid_test_dataloader,
 )
 from .wholegraph_env import compile_cpp_extension
-from .gather_fn import GatherFn
