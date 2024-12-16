@@ -14,7 +14,7 @@ def save_array(np_array, save_path, array_file_name):
 
 def convert_papers100m_dataset(args):
     ogb_root = args.ogb_root_dir
-    dataset = NodePropPredDataset(name='ogbn-papers100M', root=ogb_root)
+    dataset = NodePropPredDataset(name='ogbn-arxiv', root=ogb_root)
     graph, label = dataset[0]
     split_idx = dataset.get_idx_split()
     train_idx, valid_idx, test_idx = (
@@ -41,7 +41,7 @@ def convert_papers100m_dataset(args):
         os.makedirs(args.convert_dir)
     print("saving idx and labels...")
     with open(
-        os.path.join(args.convert_dir, 'ogbn_papers100M_data_and_label.pkl'), "wb"
+        os.path.join(args.convert_dir, 'ogbn_arxiv_data_and_label.pkl'), "wb"
     ) as f:
         pickle.dump(data_and_label, f)
     print("saving node feature...")

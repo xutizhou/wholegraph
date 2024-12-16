@@ -69,7 +69,7 @@ from .common_options import (
     add_node_classfication_options,
 )
 
-from .gnn_model import set_framework, create_gnn_layers, create_sub_graph, HomoGNNModel
+from .gnn_model import set_framework, create_gnn_layers, create_sub_graph, HomoGNNModel, GatherFn
 from .data_loader import (
     create_node_claffication_datasets,
     get_train_dataloader,

@@ -216,11 +216,11 @@ if hasArg tests; then
 else
     BUILD_TESTS=OFF
 fi
-if hasArg benchmarks; then
+#if hasArg benchmarks; then
     BUILD_BENCHMARKS=ON
-else
-    BUILD_BENCHMARKS=OFF
-fi
+#else
+#    BUILD_BENCHMARKS=OFF
+#fi
 if hasArg --enable-nvshmem; then
     BUILD_WITH_NVSHMEM=ON
 else

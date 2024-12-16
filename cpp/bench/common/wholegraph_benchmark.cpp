@@ -134,13 +134,15 @@ void MultiProcessMeasurePerformance(std::function<void()> run_fn,
     avg_metric /= wm_comm->world_size;
     if (wm_comm->world_rank == 0) {
       fprintf(stderr,
-              "== Metric: %20s:  min=%.2lf %s,, max=%.2lf %s,, avg=%.2lf %s\n",
+              "== Metric: %20s:  min=%.2lf %s,, max=%.2lf %s,, avg=%.2lf %s,, rank0==%.2lf %s\n",
               meter.metrics_[i].name.c_str(),
               min_metric,
               meter.metrics_[i].unit.c_str(),
               max_metric,
               meter.metrics_[i].unit.c_str(),
               avg_metric,
+              meter.metrics_[i].unit.c_str(),
+              recv_vec[0],
               meter.metrics_[i].unit.c_str());
     }
   }

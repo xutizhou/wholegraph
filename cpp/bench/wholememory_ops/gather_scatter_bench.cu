@@ -32,6 +32,7 @@
 #include "wholememory/initialize.hpp"
 
 #include "../../tests/wholememory/wholememory_test_utils.hpp"
+#define WITH_NVSHMEM_SUPPORT
 namespace wholegraph::bench::gather_scatter {
 
 typedef struct GatherScatterBenchParam {
